@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jason\\Documents\\GitHub\\Lupora\\Finly\\Gateway\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{18A76484-7B4B-44AA-A390-3E47A787344E}|Gateway.API\\Gateway.API.csproj|c:\\users\\jason\\documents\\github\\lupora\\finly\\gateway\\gateway.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{18A76484-7B4B-44AA-A390-3E47A787344E}|Gateway.API\\Gateway.API.csproj|solutionrelative:gateway.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jason\\Documents\\GitHub\\Lupora\\Finly\\Gateway\\Gateway.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Gateway.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\jason\\Documents\\GitHub\\Lupora\\Finly\\Gateway\\Gateway.API\\appsettings.json",
+              "RelativeToolTip": "Gateway.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-31T20:01:41.761Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

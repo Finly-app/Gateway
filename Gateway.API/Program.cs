@@ -2,7 +2,6 @@ using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Load certificate manually from file
 var certPath = builder.Configuration["ASPNETCORE_Kestrel__Certificates__Default__Path"];
 var certPassword = builder.Configuration["ASPNETCORE_Kestrel__Certificates__Default__Password"];
 
@@ -27,4 +26,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.MapReverseProxy();
+
 app.Run();

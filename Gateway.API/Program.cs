@@ -1,13 +1,16 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure named HttpClient that skips SSL validation
+// Add controllers (this was missing)
+builder.Services.AddControllers();
+
+// Insecure HttpClient for self-signed internal certs
 builder.Services
     .AddHttpClient("insecure")
     .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler {
         ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
     });
 
-// Add Reverse Proxy with config
+// Reverse proxy with config
 builder.Services
     .AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
@@ -16,7 +19,8 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.MapControllers();
+
+app.MapControllers(); // <-- requires AddControllers() above
 app.MapReverseProxy();
 
 app.Run();

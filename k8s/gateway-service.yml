@@ -5,7 +5,10 @@ metadata:
 spec:
   selector:
     app: gateway
+  type: NodePort
   ports:
     - name: http
       port: 80
       targetPort: 8080
+      nodePort: 30080
+

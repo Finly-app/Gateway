@@ -6,12 +6,9 @@ builder.Services
     .AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
-// Configure named HttpClient to trust all certs (for dev/self-signed)
-//builder.Services.AddHttpClient("insecure")
-//    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler {
-//        ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-//    });
-
+builder.WebHost.ConfigureKestrel(options => {
+    options.ListenAnyIP(8080);
+});
 
 builder.Services.AddControllers();
 var app = builder.Build();
@@ -19,7 +16,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 
-app.MapControllers(); 
+app.MapControllers();
 app.MapReverseProxy();
 
 app.Run();

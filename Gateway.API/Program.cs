@@ -16,7 +16,7 @@ var app = builder.Build();
 //app.UseHttpsRedirection();
 app.UseAuthorization();
 
-app.MapControllers();
 app.MapReverseProxy();
+app.MapControllers();
 
 app.Run();

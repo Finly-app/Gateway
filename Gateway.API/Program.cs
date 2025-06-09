@@ -4,14 +4,14 @@ builder.Services
     .AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
-builder.WebHost.ConfigureKestrel(options => {
-    options.ListenAnyIP(8080);
-});
+//builder.WebHost.ConfigureKestrel(options => {
+//    options.ListenAnyIP(8080);
+//});
 
 builder.Services.AddControllers();
 var app = builder.Build();
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapReverseProxy();

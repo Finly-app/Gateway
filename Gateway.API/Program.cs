@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
 
@@ -21,10 +21,11 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 //app.UseHttpsRedirection();
+app.UseRouting();
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
-
-app.MapReverseProxy();
+app.MapReverseProxy(); 
 app.MapControllers();
+
 
 app.Run();

@@ -1,6 +1,7 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+var originsRaw = builder.Configuration["Cors:AllowedOrigins"];
+string[] allowedOrigins = originsRaw?.Split(',') ?? Array.Empty<string>();
 
 Console.WriteLine("Origins: " + string.Join(", ", allowedOrigins));
 
